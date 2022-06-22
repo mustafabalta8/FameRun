@@ -3,7 +3,22 @@ guid: ab6e1754503fb704887ca500854789f6
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Star_Golden
+    second: {fileID: 2100000, guid: 906646a175f91f145a10cb1b420f26cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Star_Grey
+    second: {fileID: 2100000, guid: bc235a55e441e7342b51581e097b9ecd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Star__White
+    second: {fileID: 2100000, guid: 61a5cc849671939409f4483af61a9844, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
