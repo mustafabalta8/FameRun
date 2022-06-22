@@ -3,7 +3,72 @@ guid: d5ca8c3594f69454998bb90298ea1642
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Finish_Black
+    second: {fileID: 2100000, guid: bf2bb0199865566448b57a3211e0f11b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Finish_White
+    second: {fileID: 2100000, guid: 166c8653f78ea004d8b5c31fe350b468, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Finish_x2
+    second: {fileID: 2100000, guid: d87a0539d1123724bbf45ed5da680082, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Finish_x3
+    second: {fileID: 2100000, guid: 016f95b7309bcd945838b76598705883, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Finish_x4
+    second: {fileID: 2100000, guid: 61d8c6adf9fca02479aa561c4a97e34f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Finish_x5
+    second: {fileID: 2100000, guid: fb6b797f8cd337548a8ce3a71072c549, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Finish_x6
+    second: {fileID: 2100000, guid: e416dda6c38e3664aaf936153c6ab605, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Finish_x7
+    second: {fileID: 2100000, guid: 7805a20c853e0454498daaa678615b38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Finish_x8
+    second: {fileID: 2100000, guid: b354ce1235e74e84d8325be84e8e989f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Finish_x9
+    second: {fileID: 2100000, guid: 35e28682219ae164281d0d5e892a87cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Platform_1
+    second: {fileID: 2100000, guid: f528a45bc98dcdb4a85f65274e01198c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Platform_2
+    second: {fileID: 2100000, guid: 378efba5878fcf744b13b5d616c80c5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Platform_3
+    second: {fileID: 2100000, guid: af650378792ac874b9852944eee66518, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

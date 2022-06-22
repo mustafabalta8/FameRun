@@ -3,7 +3,17 @@ guid: ec7c5390b3fd47b4a98e6a1352924c4d
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thumbs_Blue
+    second: {fileID: 2100000, guid: a6fd199da8368704f98b34e1ddf3d5b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thumbs_White
+    second: {fileID: 2100000, guid: a8d35a42868fb90449e42a92a7ee3259, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

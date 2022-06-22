@@ -3,7 +3,17 @@ guid: 2fb2bb5b52c234347ad299dd99ac2943
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Twitter_Blue
+    second: {fileID: 2100000, guid: 005eb79d80c41da458607e861b6915fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Twitter_White
+    second: {fileID: 2100000, guid: ca1c08784e0ed8541a13468c1beb8231, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
