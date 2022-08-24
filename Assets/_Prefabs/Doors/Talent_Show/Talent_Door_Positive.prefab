@@ -183,7 +183,9 @@ GameObject:
   - component: {fileID: 7301468525910979253}
   - component: {fileID: 6798427356730073489}
   - component: {fileID: 619048419564883260}
-  m_Layer: 0
+  - component: {fileID: 7021874117679334551}
+  - component: {fileID: 1073379879641223698}
+  m_Layer: 3
   m_Name: Talent_Door_Positive
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,6 +260,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7021874117679334551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506856535745228142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 951cd1d656edc0a428e7a3ba3d598f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderers: []
+  Position: {x: 0, y: 0, z: 0}
+  Materials: []
+  InitialAlpha: 0
+--- !u!65 &1073379879641223698
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506856535745228142}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.979608, y: 11.388856, z: 0.65384114}
+  m_Center: {x: 0, y: 6.082271, z: -0.42691737}
 --- !u!1 &2604274472883197085
 GameObject:
   m_ObjectHideFlags: 0

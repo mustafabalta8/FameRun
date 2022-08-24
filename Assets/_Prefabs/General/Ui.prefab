@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1171393480}
   - component: {fileID: 1171393482}
   - component: {fileID: 1171393481}
+  - component: {fileID: 162218459}
   m_Layer: 5
   m_Name: image
   m_TagString: Untagged
@@ -27,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 1171393479}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6984698, y: 1.6984698, z: 1.6984698}
+  m_LocalScale: {x: 1.4132967, y: 1.4132967, z: 1.4132967}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1494274010937038345}
@@ -76,6 +77,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &162218459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171393479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99409f3c5889d14cbac2aab75fb718b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  growthAmount: 1.15
+  duration: 0.8
 --- !u!1 &1142921601559412715
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +314,7 @@ GameObject:
   - component: {fileID: 1494274010011559702}
   - component: {fileID: 1494274010011559703}
   - component: {fileID: 1494274010011559700}
+  - component: {fileID: 6468277036751322846}
   m_Layer: 5
   m_Name: Ui
   m_TagString: Untagged
@@ -391,6 +407,29 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6468277036751322846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494274010011559701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba5898b26d58714a99a6e062958cb94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startUI: {fileID: 1494274010329401790}
+  inGameUI: {fileID: 1494274011572652720}
+  successUI: {fileID: 1494274011901073096}
+  failUI: {fileID: 1494274010192932986}
+  successUIButton: {fileID: 8606145963234946705}
+  failUIButton: {fileID: 1494274010258542444}
+  popularityText: {fileID: 295207410076197587}
+  levelText: {fileID: 3970795317664869687}
+  successScreenTotalPopularity: {fileID: 7218524565747998418}
+  successScreenTempPopularity: {fileID: 2690443953254414791}
+  fadeTime: 1
 --- !u!1 &1494274010177490419
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +515,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1494274010192932989}
+  - component: {fileID: 3540900784534523958}
   m_Layer: 5
   m_Name: FailUi
   m_TagString: Untagged
@@ -506,6 +546,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &3540900784534523958
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494274010192932986}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1494274010258542445
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,9 +679,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: RestartGame
+      - m_Target: {fileID: 6468277036751322846}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: CloseFailPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -842,7 +894,6 @@ GameObject:
   - component: {fileID: 1494274010937038346}
   - component: {fileID: 1494274010937038347}
   - component: {fileID: 1494274010937038344}
-  - component: {fileID: 1494274010937038349}
   m_Layer: 5
   m_Name: Tap_to_Play
   m_TagString: Untagged
@@ -953,33 +1004,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1494274011572652720}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1494274010329401790}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: StartGame
+      - m_Target: {fileID: 6468277036751322846}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: CloseStartPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -989,26 +1016,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!95 &1494274010937038349
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494274010937038342}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5474e53e50e504d54b61f6d99fb43452, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1494274011572652720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,6 +1215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1494274011901073099}
+  - component: {fileID: 1283017856191758307}
   m_Layer: 5
   m_Name: WinUi
   m_TagString: Untagged
@@ -1241,6 +1249,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1283017856191758307
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494274011901073096}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2189854930545447426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1757,8 +1777,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -55.10414, y: -53.628357}
-  m_SizeDelta: {x: 189.02, y: 161.4}
+  m_AnchoredPosition: {x: -80.466736, y: -53.628357}
+  m_SizeDelta: {x: 239.7452, y: 161.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5663931969837090204
 CanvasRenderer:
@@ -1788,7 +1808,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2132,9 +2152,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: PlayNextLevel
+      - m_Target: {fileID: 6468277036751322846}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: CloseWinPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2602,6 +2622,7 @@ GameObject:
   - component: {fileID: 3904470988568791926}
   - component: {fileID: 7331555536784217211}
   - component: {fileID: 5786503659394520751}
+  - component: {fileID: 6661559726609391699}
   m_Layer: 5
   m_Name: AdButton
   m_TagString: Untagged
@@ -2711,3 +2732,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6661559726609391699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8904830434660913406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6966ed3d054be0546a0c7da133da7c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -95,15 +95,22 @@ public class PlayerManager : Character
         transform.position = currentPos;
 
     }
+    [SerializeField] float finalWalkSpeed=5;
     public void FinalMove(Vector3 targetPosition)
     {
-        transform.DOMove(targetPosition, 1);
-        UpdateAnimationState(AnimationState.Dancing);
-        popularityBar.SetActive(false);
-        transform.Rotate(Vector3.up * 180);
+        transform.DOMove(targetPosition, finalWalkSpeed).SetSpeedBased(true).OnComplete(StartUpdateAnimationState);
+        
+        popularityBar.SetActive(false);     
 
+    }
+
+    private void StartUpdateAnimationState()
+    {
+        transform.Rotate(Vector3.up * 180);
+        UpdateAnimationState(AnimationState.Dancing);
         GameManager.instance.HandeWinning();
     }
+
 
 
 

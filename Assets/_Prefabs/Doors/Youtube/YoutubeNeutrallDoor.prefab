@@ -267,7 +267,9 @@ GameObject:
   - component: {fileID: 5225814958382946489}
   - component: {fileID: 9163145811345381148}
   - component: {fileID: 6399333427145434070}
-  m_Layer: 0
+  - component: {fileID: -3650120692049105938}
+  - component: {fileID: 9055192354905762178}
+  m_Layer: 3
   m_Name: YoutubeNeutrallDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,6 +345,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-3650120692049105938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4885846670042382851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 951cd1d656edc0a428e7a3ba3d598f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderers: []
+  Position: {x: 0, y: 0, z: 0}
+  Materials: []
+  InitialAlpha: 0
+--- !u!65 &9055192354905762178
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4885846670042382851}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.601768, y: 9.663426, z: 0.4000033}
+  m_Center: {x: -0.00000023841856, y: 5.2195563, z: -0.2999997}
 --- !u!1001 &5167817468455854365
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    private Transform target;
     [SerializeField] private Vector3 offset;
     [SerializeField] private Vector3 finalStageOffset;
 
@@ -14,6 +14,7 @@ public class CameraManager : MonoBehaviour
     public static CameraManager instance;
     private void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         Singelton();
 
     }

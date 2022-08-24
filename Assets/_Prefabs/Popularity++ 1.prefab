@@ -111,4 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89ec951821c1be74db38bef4a51f22cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rot: {x: 0, y: 90, z: 0}
+  verticalMove: 2
+  rotation: {x: 0, y: 360, z: 0}
+  rotationDuration: 3
+  easeType: 28

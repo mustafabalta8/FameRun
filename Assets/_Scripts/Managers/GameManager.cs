@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
         Singelton();
     }
 
-    public void StartGame()
+    public static void StartGame()
     {
         gameState = GameStates.InGame;
         PlayerManager.instance.UpdateAnimationState(AnimationState.Walking);
@@ -48,11 +48,11 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
         UIManager.instance.OpenSuccessScreen();
     }
-    public void RestartGame()
+    public static void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-    public void PlayNextLevel()
+    public static void PlayNextLevel()
     {
         int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
         if (nextIndex > 9) { SceneManager.LoadScene(0); }
