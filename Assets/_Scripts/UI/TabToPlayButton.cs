@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-
-
 public class TabToPlayButton : MonoBehaviour
 {
     [SerializeField] float growthAmount=1.2f;

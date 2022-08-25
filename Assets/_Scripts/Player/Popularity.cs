@@ -26,7 +26,16 @@ public class Popularity : Singleton<Popularity>
         }      
 
     }
-
+    public void UpdatePopularity(int amount)
+    {
+        tempPopularity += amount;
+        UIManager.instance.UpdatePopularity(tempPopularity);
+        PopularityBar.instance.UpdateBar(tempPopularity);
+        if (tempPopularity < -2)
+        {
+            GameManager.instance.HandleFailing();
+        }
+    }
     public void HandleCollidingWithDoor(int doorImpact)
     {
 
@@ -42,16 +51,7 @@ public class Popularity : Singleton<Popularity>
         UpdatePopularity(doorImpact);
     }
 
-    public void UpdatePopularity( int amount)
-    {
-        tempPopularity += amount;
-        UIManager.instance.UpdatePopularity(tempPopularity);
-        PopularityBar.instance.UpdateBar(tempPopularity);
-        if (tempPopularity < -2)
-        {
-            GameManager.instance.HandleFailing();
-        }
-    }
+   
     private void InstantiateVFXOnChangeInPopularity(bool isPositive)
     {
         int randomIndex = UnityEngine.Random.Range(0, 4);

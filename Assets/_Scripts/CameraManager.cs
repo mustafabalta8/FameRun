@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraManager : MonoBehaviour
+public class CameraManager : Singleton<CameraManager>
 {
     private Transform target;
     [SerializeField] private Vector3 offset;
@@ -11,28 +11,17 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private float lerpValue;
     [SerializeField] private float camVelocity_x, camSpeed;
 
-    public static CameraManager instance;
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        Singelton();
+
 
     }
     private void LateUpdate()
     {
         MoveCamera();
     }
-    private void Singelton()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+
     private void MoveCamera()
     {
         transform.position = Vector3.Lerp(transform.position, target.position + offset, lerpValue * Time.deltaTime)  ;

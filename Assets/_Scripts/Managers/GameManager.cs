@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    public static GameManager instance;
 
     private static GameStates gameState;
     public static GameStates GameState { get => gameState; set => gameState = value; }
     private void Awake()
     {
         GameState = GameStates.Menu;
-        Singelton();
     }
 
     public static void StartGame()
@@ -20,17 +18,7 @@ public class GameManager : MonoBehaviour
         gameState = GameStates.InGame;
         PlayerManager.instance.UpdateAnimationState(AnimationState.Walking);
     }
-    private void Singelton()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+
     public void HandleFailing()
     {
         gameState = GameStates.Fail;

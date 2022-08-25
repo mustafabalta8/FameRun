@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class PopularityBar : MonoBehaviour
+public class PopularityBar : Singleton<PopularityBar>
 {
     // Bar Variables
     [SerializeField] private float maxPopularity;
@@ -18,7 +18,7 @@ public class PopularityBar : MonoBehaviour
     [SerializeField] private TMP_Text barText;
     [SerializeField] private List<Color> textColors;
 
-    public static PopularityBar instance;
+
 
     [SerializeField] private float firstStateInterval = 0.25f;
     [SerializeField] private float secondStateInterval = 0.5f;
@@ -26,22 +26,9 @@ public class PopularityBar : MonoBehaviour
     private void Start()
     {
         barText.color = textColors[0];
-        Singelton();
+
         currentPopularity = 0;
     }
-    private void Singelton()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
-
 
     public void UpdateBar(float currentPopularity)
     {

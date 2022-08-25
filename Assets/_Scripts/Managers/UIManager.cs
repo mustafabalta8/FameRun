@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using DG.Tweening;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
-    public static UIManager instance;
 
     [SerializeField] private GameObject startUI;
     [SerializeField] private GameObject inGameUI;
@@ -25,23 +24,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] float fadeTime = 1;
     void Start()
     {
-        Singelton();
-
         int levelNum = SceneManager.GetActiveScene().buildIndex + 1;
         levelText.text = levelNum.ToString();
         popularityText.text = "";
     }
-    private void Singelton()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+
 
     public void CloseStartPanel()
     {
