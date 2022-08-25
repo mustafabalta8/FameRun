@@ -114,24 +114,17 @@ public class UIManager : MonoBehaviour
             .Append(rectTransform.DOAnchorPos(new Vector2(0, -2500f), fadeTime, false).SetEase(Ease.InOutQuint))
             .OnComplete(OnFadeOutComplete)
             .Join(canvasGroup.DOFade(0.5f, fadeTime));
-        
-        
-        
-            
 
     }
 
     void OnFadeOutComplete()
     {
-        print("OnFadeOutComplete");
         if (selectedScreen == 0)
         {
-            print("aw");
             GameManager.PlayNextLevel();
         }
         else
         {
-            print("awasdaa");
             GameManager.RestartGame();
         }
 

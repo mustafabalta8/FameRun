@@ -1,8 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class Popularity : MonoBehaviour
+using UnityEngine;
+using System;
+
+public class Popularity : Singleton<Popularity>
 {
     private static int totalPopularity;
     public static int TotalPopularity { get => totalPopularity; set => totalPopularity = value; }
@@ -10,51 +10,27 @@ public class Popularity : MonoBehaviour
     private int tempPopularity = 0;
     public int TempPopularity { get => tempPopularity; set => tempPopularity = value; }
 
-    public static Popularity instance;
 
     [SerializeField] private Vector3 popUpPosition;
     [SerializeField] private GameObject[] positiveEmojis;
     [SerializeField] private GameObject[] negativeEmojis;
-    private void Start()
-    {
-        Singelton();
-    }
+
+
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Increase"))
+        var interactible = other.GetComponent<IInteractable>();
+        if (interactible != null)
         {
-            tempPopularity += 2;
-            
-            UpdatePopularity();
-            other.gameObject.SetActive(false);
-        }
-        if (other.CompareTag("Decrease"))
-        {
-            tempPopularity -= 2;
-            
-            UpdatePopularity();
-            other.gameObject.SetActive(false);
-        }/*
-        if (other.CompareTag("NegativeDoor"))
-        {
-            tempPopularity -= 10;
-            InstantiateVFXOnChangeInPopularity(false);
-            UpdatePopularity();
-        }
-        if (other.CompareTag("PositiveDoor"))
-        {
-            tempPopularity += 10;
-            InstantiateVFXOnChangeInPopularity(true);
-            
-        }*/
+            interactible.Interact();
+        }      
 
     }
 
     public void HandleCollidingWithDoor(int doorImpact)
     {
 
-        tempPopularity += doorImpact;
+        //tempPopularity += doorImpact;
         if (doorImpact > 0)
         {
             InstantiateVFXOnChangeInPopularity(true);
@@ -63,21 +39,12 @@ public class Popularity : MonoBehaviour
         {
             InstantiateVFXOnChangeInPopularity(false);
         }
-        UpdatePopularity();
+        UpdatePopularity(doorImpact);
     }
-    private void Singelton()
+
+    public void UpdatePopularity( int amount)
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    private void UpdatePopularity()
-    {
+        tempPopularity += amount;
         UIManager.instance.UpdatePopularity(tempPopularity);
         PopularityBar.instance.UpdateBar(tempPopularity);
         if (tempPopularity < -2)
@@ -87,7 +54,7 @@ public class Popularity : MonoBehaviour
     }
     private void InstantiateVFXOnChangeInPopularity(bool isPositive)
     {
-        int randomIndex = Random.Range(0, 4);
+        int randomIndex = UnityEngine.Random.Range(0, 4);
         if (isPositive)
         {
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1197219258794731868}
   - component: {fileID: 4634818927168104011}
   - component: {fileID: 663881000131934328}
-  - component: {fileID: 3354648848853409415}
+  - component: {fileID: 7444478371348456833}
   m_Layer: 0
   m_Name: left
   m_TagString: NegativeDoor
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1980743, y: 7.240405, z: 4.000001}
   m_Center: {x: -0.33635953, y: 4.0092564, z: 2.000001}
---- !u!114 &3354648848853409415
+--- !u!114 &7444478371348456833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 800408110619843097}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b7d824233db9864195fabd434ee635f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ae8646470ec99847ba55fb59e7a1af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   doorImpactText: {fileID: 4383667106418546946}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 2399427257570236452}
   - component: {fileID: 4716625370995517061}
   - component: {fileID: 4761856794394275800}
-  - component: {fileID: 1204089448201781691}
+  - component: {fileID: 967765213484767848}
   m_Layer: 0
   m_Name: left
   m_TagString: NegativeDoor
@@ -209,7 +209,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1980743, y: 7.240405, z: 4.000001}
   m_Center: {x: -0.33635953, y: 4.0092564, z: 2.000001}
---- !u!114 &1204089448201781691
+--- !u!114 &967765213484767848
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4510221586505986428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b7d824233db9864195fabd434ee635f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ae8646470ec99847ba55fb59e7a1af2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   doorImpactText: {fileID: 2476662032269692797}

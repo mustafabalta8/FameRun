@@ -6,7 +6,7 @@ public class Character : MonoBehaviour
 {
     [SerializeField] protected Animator animator;
 
-    protected Rigidbody rigidbody;
+    //protected Rigidbody rigidbody;
 
     public void UpdateAnimationState(AnimationState state)
     {
@@ -24,7 +24,7 @@ public class Character : MonoBehaviour
                 break;
             case AnimationState.Dancing:
                 animator.SetTrigger("hasSucceeded");
-                print("has succeed");
+ 
                 break;
         }
     }

@@ -106,7 +106,7 @@ public class PlayerManager : Character
 
     private void StartUpdateAnimationState()
     {
-        transform.Rotate(Vector3.up * 180);
+        transform.DORotate(Vector3.up * 180, 0.5f);  //Rotate(Vector3.up * 180);
         UpdateAnimationState(AnimationState.Dancing);
         GameManager.instance.HandeWinning();
     }

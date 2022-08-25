@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7748283464179583019}
   - component: {fileID: 424996460524918605}
   - component: {fileID: 4592269346478768641}
+  - component: {fileID: 2067618764}
   m_Layer: 0
   m_Name: Popularity--
-  m_TagString: Decrease
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,11 +107,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8108610947773016574}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89ec951821c1be74db38bef4a51f22cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  verticalMove: 2.3
+  rotation: {x: 0, y: 360, z: 0}
+  rotationDuration: 3
+  easeType: 28
+--- !u!114 &2067618764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8108610947773016574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c09ce6b37857fe64694a2a91b70a02e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popularityEffectAmount: -2
   verticalMove: 2.3
   rotation: {x: 0, y: 360, z: 0}
   rotationDuration: 3
