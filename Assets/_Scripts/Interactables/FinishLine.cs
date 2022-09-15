@@ -2,26 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FinishLine : MonoBehaviour
+public class FinishLine : MonoBehaviour,  IInteractable
 {
     [SerializeField] Transform[] multiplierPositions;
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            HandleFinalMovement();
-        }
-    }
 
+    public void Interact()
+    {
+        HandleFinalMovement();
+    }
     private void HandleFinalMovement()
     {
-        //print("final");
+
         GameManager.GameState = GameStates.Final;
 
         //8  pos
         float positionDeterminer = Popularity.instance.TempPopularity / 100f;
         int lastIndex = multiplierPositions.Length - 1;
         //print(positionDeterminer);
+
         if (positionDeterminer > .9f)
         {
             PlayerManager.instance.FinalMove(multiplierPositions[lastIndex].position);
@@ -55,4 +53,6 @@ public class FinishLine : MonoBehaviour
             PlayerManager.instance.FinalMove(multiplierPositions[lastIndex - 7].position);
         }
     }
+
+
 }

@@ -21,7 +21,7 @@ public class PlayerManager : Character
     public static PlayerManager instance;
 
     [SerializeField] private GameObject popularityBar;
-
+    [SerializeField] float finalWalkSpeed = 5;
 
     private void Awake()
     {
@@ -45,6 +45,15 @@ public class PlayerManager : Character
             HandleSideMove();
             MoveForward();
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        var interactible = other.GetComponent<IInteractable>();
+        if (interactible != null)
+        {
+            interactible.Interact();
+        }
+
     }
 
     public void UpdateCharacterState(CharacterState state)
@@ -95,7 +104,7 @@ public class PlayerManager : Character
         transform.position = currentPos;
 
     }
-    [SerializeField] float finalWalkSpeed=5;
+
     public void FinalMove(Vector3 targetPosition)
     {
         transform.DOMove(targetPosition, finalWalkSpeed).SetSpeedBased(true).OnComplete(StartUpdateAnimationState);

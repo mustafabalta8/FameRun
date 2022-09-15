@@ -34,7 +34,8 @@ public class UIManager : Singleton<UIManager>
     {
         startUI.SetActive(false);
         inGameUI.SetActive(true);
-        GameManager.StartGame();
+        //GameManager.StartGame();
+        GameManager.instance.UpdateGameState(GameStates.InGame);     
     }
     public void UpdatePopularity(int value)
     {

@@ -8,14 +8,45 @@ public class GameManager : Singleton<GameManager>
 
     private static GameStates gameState;
     public static GameStates GameState { get => gameState; set => gameState = value; }
-    private void Awake()
+    public override void Awake()
     {
+        base.Awake();
+        
         GameState = GameStates.Menu;
     }
 
+
+    public void UpdateGameState(GameStates newState)
+    {
+        gameState = newState;
+        switch (newState)
+        {
+            case GameStates.Menu:
+                
+                break;
+            case GameStates.InGame:
+                StartGame();
+                break;
+            case GameStates.Final:
+
+                break;
+            case GameStates.Success:
+
+                break;
+            case GameStates.Fail:
+
+                break;
+            default:
+                break;
+        }
+        
+        //OnGameStateChange?.Invoke(newState);
+    }
+
+    
     public static void StartGame()
     {
-        gameState = GameStates.InGame;
+        //gameState = GameStates.InGame;
         PlayerManager.instance.UpdateAnimationState(AnimationState.Walking);
     }
 
@@ -36,6 +67,8 @@ public class GameManager : Singleton<GameManager>
         yield return new WaitForSeconds(3f);
         UIManager.instance.OpenSuccessScreen();
     }
+
+
     public static void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

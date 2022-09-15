@@ -15,17 +15,6 @@ public class Popularity : Singleton<Popularity>
     [SerializeField] private GameObject[] positiveEmojis;
     [SerializeField] private GameObject[] negativeEmojis;
 
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        var interactible = other.GetComponent<IInteractable>();
-        if (interactible != null)
-        {
-            interactible.Interact();
-        }      
-
-    }
     public void UpdatePopularity(int amount)
     {
         tempPopularity += amount;
